@@ -11,6 +11,7 @@ criar_imagens:
    - docker build -t gminatto/gitlab-runner:1.0 app/.
    - docker push gminatto/gitlab-runner:1.0
    
+   
 executar_imagens:
   stage: deploy
   needs:
