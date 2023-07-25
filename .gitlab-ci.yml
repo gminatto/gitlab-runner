@@ -10,12 +10,12 @@ criar_imagens:
   script:
    - docker build -t gminatto/gitlab-runner:1.0 app/.
    - docker push gminatto/gitlab-runner:1.0
-
+   
 executar_imagens:
-	stage: deploy
-	needs:
-		- criar_imagens
-	tags:
-		- aws
-	script:
-		- docker run -dit --name my-app -p 80:80 gminatto/gitlab-runner:1.0 
+  stage: deploy
+  needs:
+    - criar_imagens
+  tags:
+    - aws
+  script:
+    - docker run -dit --name my-app -p 80:80 gminatto/gitlab-runner:1.0 
